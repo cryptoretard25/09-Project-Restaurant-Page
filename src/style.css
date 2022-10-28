@@ -1,0 +1,165 @@
+@font-face{
+  font-family: 'StarWars-Regular';
+  src: url('./fonts/StarjediRegular.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  -border: 1px dashed gray;
+}
+:root {
+  font-size: 62.5%;
+  font-family: 'StarWars-Regular';
+--ash-gray: #b4b8abff;
+--prussian-blue: #153243ff;
+--indigo-dye: #284b63ff;
+--ivory: #f4f9e9ff;
+--alabaster: #eef0ebff;
+/* shadow */
+--inner-shadow: inset #1d1c1c6b 0px 5px 15px;
+--outer-shadow: 2px 4px 8px 1px rgba(255, 255, 255, 0.404);
+}
+body{
+  font-size: 2rem;
+  min-height: 100vh;
+  color: white;
+  background-color: var(--ivory);
+}
+.grid-container{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1.3fr auto 10fr auto;
+  grid-template-areas: 
+  'header'
+  'menu'
+  'content'
+  'footer';
+  }
+.header{
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: header;
+  text-align: center;
+  background-color: var(--indigo-dye) ;
+}
+.menu{
+  padding: 0.2rem;
+  grid-area: menu;
+  background-color: var(--ash-gray);
+  box-shadow: var(--inner-shadow);
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.menu-item{
+  background-color: var(--prussian-blue);
+  -background-color: black;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu-text:hover{
+  transform: scale(1.5);
+}
+.menu-item:hover{
+  color: var(--prussian-blue);
+  background-color: var(--ivory);
+}
+.menu-one{
+
+}
+
+.menu-two{
+
+}
+.menu-three{
+
+}
+.content{
+  padding: 3rem 5rem;
+  width: min(140rem, 100%);
+  margin: 0 auto;
+  grid-area: content;
+  background-color: var(--ivory);
+  color: var(--prussian-blue);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  column-gap: 7rem;
+  row-gap: 3rem;
+  grid-auto-rows: 30rem;
+  
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--indigo-dye) 
+}
+
+.food{
+  border: 2px solid black;
+  box-shadow: var(--outer-shadow);
+  background-color: grey;
+  border: 3px solid var(--ash-gray);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.food:hover{
+  border: 3px solid var(--indigo-dye);
+  transform: scale(1.05);
+}
+.food>img{
+  height: 75%;
+  border-bottom: 3px solid var(--ash-gray);
+}
+.food>.description{
+  padding: 0 2rem;
+  color: white;
+  background-color: var(--prussian-blue);
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.food-name{
+  flex: 1;
+}
+.food-content{
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+.food:hover .food-content {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+  padding: 20px;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  transform: translateY(-34%);
+}
+@media only screen and (max-width: 660px){
+.menu{
+  grid-template-columns: 1fr;
+  padding: 0.3rem 0;
+  gap: 0;
+  grid-row-gap: 0.3rem;
+}
+}
