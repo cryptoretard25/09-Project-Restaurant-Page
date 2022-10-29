@@ -12,8 +12,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Restaraunt Page',
-      favicon: '',
+      title: 'Best Pizza in the Galaxy',
+      favicon: './src/logo/pizza.ico',
       template: './src/template.html',
     })
   ],
