@@ -10,7 +10,7 @@ class Food {
     food.classList.add('food');
     const img = document.createElement('img');
     img.setAttribute('src', this.src);
-    img.setAttribute('alr', this.name);
+    img.setAttribute('alt', this.name);
 
     const description = document.createElement('div');
     description.classList.add('description')
@@ -35,37 +35,37 @@ class Food {
 
 const food = [
   new Food(
-    "../src/img/Salsiccia.jpeg",
+    "./img/Salsiccia.jpeg",
     "Salsiccia",
     10,
     "Tomato sauce, Mozarella, Tomato, Homemade sausage, Garlic, Basil"
   ),
   new Food(
-    "../src/img/Gamberi.jpg",
+    "./img/Gamberi.jpg",
     "Gamberi",
     12,
     "Tomato sauce, Mozarella, Shrimps, Feta cheese, Olives, Basil"
   ),
   new Food(
-    "../src/img/Carne.jpg",
+    "./img/Carne.jpg",
     "Carne",
     18,
     "Tomato sauce, Mozarella, Homemade sausage, Bacon, Garlic, Pepper, Chilli"
   ),
   new Food(
-    "../src/img/Colorato.jpg",
+    "./img/Colorato.jpg",
     "Colorato",
     15,
     "Tomato sauce, Mozarella, Onion, Pepper, Champignons, Basil"
   ),
   new Food(
-    "../src/img/Pomodoro.jpg",
+    "./img/Pomodoro.jpg",
     "Pomodoro",
     14,
     "Tomato sauce, Mozarella, Tomato, Onion, Feta cheese, Chilli"
   ),
   new Food(
-    "../src/img/Crema.jpg",
+    "./img/Crema.jpg",
     "Crema",
     16,
     "Tomato sauce, Mozarella, Homemade sausage, Bacon, Garlic, Pepper, Chilli"
@@ -75,9 +75,7 @@ const food = [
 export default function(){
   const menuContainer = document.createElement('div');
   menuContainer.classList.add('menu-page', 'hover');
-
   food.forEach(food => menuContainer.append(food.createFood()))
-
   return menuContainer;
 }
 
